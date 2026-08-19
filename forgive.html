@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>One Last Question 💌</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="card">
+<div class="eyebrow">One last question…</div>
+<h1>Will you forgive me, baby? 🥺❤️</h1>
+<div class="buttons">
+  <a class="btn" href="yes.html">Yes 🥹💕</a>
+  <button class="btn secondary" id="noBtn">No 😤</button>
+</div>
+<p id="tease" class="small hidden">Heyyy, don't click that! 😭👉🏻</p>
+</main>
+<script>
+const noBtn = document.getElementById("noBtn");
+const tease = document.getElementById("tease");
+let moved = false;
+
+noBtn.addEventListener("click", () => {
+  moved = true;
+  tease.classList.remove("hidden");
+  noBtn.style.position = "fixed";
+  const pad = 25;
+  const maxX = Math.max(pad, window.innerWidth - noBtn.offsetWidth - pad);
+  const maxY = Math.max(pad, window.innerHeight - noBtn.offsetHeight - pad);
+  noBtn.style.left = (pad + Math.random() * (maxX - pad)) + "px";
+  noBtn.style.top = (pad + Math.random() * (maxY - pad)) + "px";
+});
+
+noBtn.addEventListener("mouseenter", () => {
+  if (!moved) return;
+  const pad = 25;
+  const maxX = Math.max(pad, window.innerWidth - noBtn.offsetWidth - pad);
+  const maxY = Math.max(pad, window.innerHeight - noBtn.offsetHeight - pad);
+  noBtn.style.left = (pad + Math.random() * (maxX - pad)) + "px";
+  noBtn.style.top = (pad + Math.random() * (maxY - pad)) + "px";
+});
+</script>
+</body></html>

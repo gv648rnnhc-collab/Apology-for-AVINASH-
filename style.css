@@ -1,0 +1,41 @@
+
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+color:#6f3c55;
+background:
+radial-gradient(circle at 12% 12%,rgba(214,160,177,.22),transparent 28%),
+radial-gradient(circle at 90% 82%,rgba(214,160,177,.18),transparent 30%),
+linear-gradient(135deg,#fffafb,#f8f1f5);
+display:flex;align-items:center;justify-content:center;padding:28px;
+}
+.card{
+width:min(620px,100%);min-height:560px;padding:52px 30px;
+background:rgba(255,255,255,.88);border:1.5px solid #ead1d9;
+border-radius:32px;box-shadow:0 20px 60px rgba(92,48,68,.14);
+text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
+backdrop-filter:blur(10px);animation:in .55s ease both;
+}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;opacity:.62;font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(2rem,8vw,3.1rem);line-height:1.12;margin:18px 0}
+p{font-family:Georgia,serif;font-size:clamp(1.2rem,4.5vw,1.5rem);line-height:1.65;max-width:520px}
+.note{text-align:left;max-width:540px}
+.note p{font-size:1.05rem;margin:10px 0}
+.btn{
+display:inline-block;text-decoration:none;color:white;background:#6f3c55;
+padding:14px 24px;border-radius:999px;font-weight:750;margin-top:25px;
+box-shadow:0 10px 24px rgba(111,60,85,.22);transition:.2s transform
+}
+.btn:hover{transform:translateY(-2px)}
+.secondary{background:white;color:#6f3c55;border:1px solid #ead1d9;box-shadow:none}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.heart{font-size:3rem;animation:float 2.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.small{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.95rem;opacity:.68}
+.hearts{font-size:1.7rem;margin-top:28px;letter-spacing:7px;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@media(max-width:520px){body{padding:15px}.card{min-height:calc(100vh - 30px);padding:40px 20px;border-radius:26px}}
+
+.hidden{display:none!important}
